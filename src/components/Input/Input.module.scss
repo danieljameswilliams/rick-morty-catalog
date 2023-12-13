@@ -1,0 +1,102 @@
+@import "styles/helpers";
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    color: var(--label-color, #19232B);
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: rem(16);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.tagline {
+    color: var(--label-color, #19232B);
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: rem(12);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color, transparent);
+    border: 1px solid var(--border-color, #1F76A9);
+    border-radius: var(--border-radius, 6px);
+    cursor: text;
+    padding: 0 15px;
+
+    &:focus-within {
+        border-color: var(--border-color-focused, #19232B);
+    }
+
+    .isInvalid & {
+        border: 1px solid red;
+    }
+
+    .isSuccess & {
+        border: 1px solid green;
+    }
+}
+
+.input {
+    -webkit-box-shadow: 0 0 0px 1000px var(--background-color, transparent) inset !important;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    color: var(--text-color, #19232B);
+    cursor: inherit;
+    font-size: rem(16);
+    height: 40px;
+    outline: 0;
+    padding: 0;
+    width: 100%;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px var(--background-color, transparent) inset !important;
+    }
+
+    .slot + & {
+        padding-left: 10px;
+    }
+}
+
+.slot {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+
+    .input + & {
+        padding-left: 10px;
+    }
+}
+
+.helperText {
+    display: block;
+
+    .isInvalid & {
+        color: red;
+    }
+
+    .isSuccess & {
+        color: green;
+    }
+}

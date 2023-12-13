@@ -1,0 +1,23 @@
+@import "styles/helpers";
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms ease-in-out;
+
+    &.isOpen {
+        grid-template-rows: 1fr;
+    }
+}
+
+.inner {
+    overflow: hidden;
+    padding: var(--padding);
+    transition: all 250ms ease-in-out;
+
+    .wrapper:not(.isOpen) & {
+        border-width: 0 !important;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

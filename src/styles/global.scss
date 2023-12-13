@@ -1,0 +1,39 @@
+@import "helpers";
+@import-normalize;
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    font-size: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: rem(16);
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    display: block;
+    margin: 0;
+}

@@ -1,0 +1,17 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+			"**/.gitignore": true,
+            "**/.vscode": true,
+            "**/*.code-workspace": true,
+            "**/node_modules": true,
+			"**/*-lock.json": true,
+        }
+    }
+}
