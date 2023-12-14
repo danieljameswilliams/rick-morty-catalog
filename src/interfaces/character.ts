@@ -91,3 +91,9 @@ export interface Info<T> {
     }
     results?: T
 }
+
+export interface PaginationInfo {
+    count: number;
+    pages: number;
+    next: string | null
+}
