@@ -1,0 +1,35 @@
+.row {
+    cursor: pointer;
+    display: table-row;
+    width: 100%;
+
+    &:hover {
+        background-color: #f9f9f9;
+    }
+
+    &:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+}
+
+.cell {
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+.imageCell {
+    display: table-cell;
+    max-width: 50px;
+    min-width: 50px;
+    padding: 10px;
+    vertical-align: middle;
+    width: 100vw;
+    width: 50px;
+}
+
+.image {
+    width: 100%;
+    max-width: 40px;
+}

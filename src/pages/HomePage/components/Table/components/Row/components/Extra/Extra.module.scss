@@ -1,0 +1,13 @@
+.extra {
+    display: table-row;
+}
+
+.extraCell {
+    display: table-cell;
+    column-span: 6;
+}
+
+.inner {
+    --padding: 20px;
+    width: 100%;
+}

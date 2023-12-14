@@ -1,0 +1,23 @@
+@import "styles/helpers";
+
+.table {
+    border-spacing: 0;
+    display: table;
+    width: 100%;
+}
+
+.tableHead {
+    display: table-header-group;
+}
+
+.headCell {
+    display: table-cell;
+    text-align: left;
+    font-size: rem(18);
+    font-weight: 600;
+    padding: 10px;
+}
+
+.tableBody {
+    display: table-row-group;
+}
