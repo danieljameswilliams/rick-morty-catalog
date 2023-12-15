@@ -1,0 +1,47 @@
+@import "styles/helpers";
+
+.extra {
+    display: table-row;
+}
+
+.extraCell {
+    display: table-cell;
+    column-span: 6;
+}
+
+.collapsable {
+    --padding: 20px;
+}
+
+.inner {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 250px;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.heading {
+    font-size: rem(14);
+    color: #cecece;
+}

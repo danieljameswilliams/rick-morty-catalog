@@ -1,10 +1,10 @@
 import { Character } from "../../../../interfaces/character";
 import { Row } from "./components/Row/Row";
 
-import S from "./Table.module.scss";
-import { TableProps } from "./TableProps";
+import S from "./ListDesktop.module.scss";
+import { ListDesktopProps } from "./CharacterListDesktopProps";
 
-export const Table = (props: TableProps) => {
+export const ListDesktop = (props: ListDesktopProps) => {
     return (
         <div className={S.table}>
             <div className={S.tableHead}>

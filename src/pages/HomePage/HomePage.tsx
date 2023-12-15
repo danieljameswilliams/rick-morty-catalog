@@ -1,12 +1,16 @@
 import { useCallback } from "react";
-import { useCharacters } from "../../contexts/characters.context";
+import { useCharacters } from "../../contexts/useCharacters";
+import { useScreen } from "../../contexts/useScreen";
 
 import { Filter } from "./components/Filter/Filter";
+import { ListDesktop } from "./components/ListDesktop/ListDesktop";
+import { ListMobile } from "./components/ListMobile/ListMobile";
 import { Pagination } from "./components/Pagination/Pagination";
-import { Table } from "./components/Table/Table";
 import S from "./HomePage.module.scss";
 
 export const HomePage = () => {
+    const { isScreenMobile } = useScreen();
+    
     const { characters, viewState, showPagination, paginate, filter } = useCharacters();
 
     const onFilterChanged = useCallback((query: string) => {
@@ -27,7 +31,11 @@ export const HomePage = () => {
                 {["SUCCESS", "PAGINATING"].includes(viewState) ? (
                     <div className={S.list}>
                         {/* List */}
-                        <Table characters={characters} />
+                        {isScreenMobile ? (
+                            <ListMobile characters={characters} />
+                        ) : (
+                            <ListDesktop characters={characters} />
+                        )}
 
                         {/* Pagination */}
                         {showPagination ? (
@@ -38,13 +46,14 @@ export const HomePage = () => {
             </div>
 
             {/* Loading */}
+            {/* TODO: Show only loading if >250ms */}
             {viewState === "LOADING" ? (
-                <div>TODO: Loading</div>
+                <div className={S.loading}>Loading</div>
             ) : null}
 
             {/* Error */}
             {["NOT_FOUND", "INTERNAL_ERROR"].includes(viewState) ? (
-                <div>TODO: Error</div>
+                <div>Oh no! Seems you're in a pickle, Rick!</div>
             ) : null}
         </div>
     );

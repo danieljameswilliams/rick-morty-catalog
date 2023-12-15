@@ -1,8 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import { Character, CharacterFilter, Info } from "../interfaces/character";
 
 type GetCharactersViewState = "INIT" | "LOADING" | "PAGINATING" | "SUCCESS" | "NOT_FOUND" | "INTERNAL_ERROR";
+
+interface CharacterProvider {
+    children: ReactNode;
+}
 
 interface CharactersContext {
     viewState: GetCharactersViewState;
@@ -14,7 +18,7 @@ interface CharactersContext {
 
 const CharactersContext = createContext<CharactersContext>({} as CharactersContext);
 
-export const CharactersProvider = ({ children }: any) => {
+export const CharactersProvider = (props: CharacterProvider) => {
     const [characters, setCharacters] = useState<Character[]>([]);
     const [viewState, setViewState] = useState<GetCharactersViewState>("INIT");
 
@@ -130,7 +134,7 @@ export const CharactersProvider = ({ children }: any) => {
 
     return (
         <CharactersContext.Provider value={{ characters, viewState, showPagination, paginate, filter }}>
-            {children}
+            {props.children}
         </CharactersContext.Provider>
     );
 };

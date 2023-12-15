@@ -1,8 +1,8 @@
 import { DebouncedInput } from "../../../../components/DebouncedInput/DebouncedInput";
+import { useCallback } from "react";
 
 import { FilterProps } from "./FilterProps";
 import S from "./Filter.module.scss";
-import { useCallback } from "react";
 
 export const Filter = (props: FilterProps) => {
     const { onChange } = props;
@@ -12,6 +12,9 @@ export const Filter = (props: FilterProps) => {
             onChange(query);
         }
     }, [onChange]);
+
+    // TODO: Make sort option if API supports it
+    // TODO: Make filter select on Dead/Alive etc.
 
     return (
         <form className={S.form} noValidate>

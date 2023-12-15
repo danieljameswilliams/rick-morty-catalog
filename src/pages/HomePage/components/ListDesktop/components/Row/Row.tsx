@@ -1,12 +1,10 @@
 import { MouseEvent, useState } from "react";
-import { Character } from "../../../../../../interfaces/character";
 
-import S from "./Row.module.scss";
 import { Extra } from "./components/Extra/Extra";
+import { RowProps } from "./RowProps";
+import S from "./Row.module.scss";
 
-// TODO: Make RowProps extends Character
-// TODO: Make table divs
-export const Row = (props: Character) => {
+export const Row = (props: RowProps) => {
     const [showDetails, setShowDetails] = useState<boolean>(false);
     
     const onRowClicked = (event: MouseEvent<HTMLDivElement>) => {
@@ -19,7 +17,7 @@ export const Row = (props: Character) => {
         <>
             <div className={S.row} role="button" onClick={onRowClicked}>
                 <div className={S.imageCell}>
-                    <img className={S.image} src={props.image} alt={props.name} />
+                    <img className={S.image} src={props.image} alt={props.name} loading="lazy" />
                 </div>
                 
                 <div className={S.cell}>{props.name}</div>

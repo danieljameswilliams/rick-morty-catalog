@@ -1,5 +1,5 @@
 import { Character } from "../../../../interfaces/character";
 
-export interface TableProps {
+export interface ListDesktopProps {
     characters: Character[];
 }

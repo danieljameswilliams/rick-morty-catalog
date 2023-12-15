@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface CollapableProps {
+export interface CollapsableProps {
     open?: boolean;
 
     className?: string;

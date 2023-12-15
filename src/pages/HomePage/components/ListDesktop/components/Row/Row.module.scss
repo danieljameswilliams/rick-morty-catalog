@@ -3,7 +3,8 @@
     display: table-row;
     width: 100%;
 
-    &:hover {
+    &:hover,
+    &:hover:nth-of-type(odd) {
         background-color: #f9f9f9;
     }
 

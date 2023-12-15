@@ -10,7 +10,8 @@ export const DebouncedInput = (props: DebouncedInputProps) => {
     const [currentQuery, setCurrentQuery] = useState<string>("");
     const [debouncedValue] = useDebounce(currentQuery, delay ?? 250);
 
-    // TODO: Find a more elegant solution to this
+    // TODO: Find a more elegant solution to this,
+    // because effect is run when debouncedValue is initialized
     const isInitialMount = useRef<boolean>(true);
 
     const onInputChanged = (event: ChangeEvent<HTMLInputElement>) => {

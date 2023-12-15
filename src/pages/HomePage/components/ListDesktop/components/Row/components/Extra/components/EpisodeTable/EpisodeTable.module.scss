@@ -1,0 +1,43 @@
+@import "styles/helpers";
+
+.table {
+    border-spacing: 0;
+    display: table;
+    width: 100%;
+}
+
+.tableHead {
+    display: table-header-group;
+}
+
+.headCell {
+    display: table-cell;
+    text-align: left;
+    font-size: rem(16);
+    font-weight: 600;
+    padding: 10px;
+}
+
+.tableBody {
+    display: table-row-group;
+}
+
+.episode {
+    display: table-row;
+
+    &:nth-child(even) {
+        background-color: #f1f1f1;
+    }
+}
+
+.cell {
+    display: table-cell;
+    padding: 10px;
+    width: 100vw;
+
+    &:nth-child(3),
+    &:nth-child(4) {
+        width: 40px;
+        max-width: 40px;
+    }
+}

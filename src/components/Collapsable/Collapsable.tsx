@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
 import { cn } from "../../helpers/classNames";
 
-import { CollapableProps } from "./CollapableProps";
-import S from "./Collapable.module.scss";
+import { CollapsableProps } from "./CollapsableProps";
+import S from "./Collapsable.module.scss";
 
-export const Collapable = forwardRef<HTMLDivElement, CollapableProps>((props, ref) => {
+export const Collapsable = forwardRef<HTMLDivElement, CollapsableProps>((props, ref) => {
     const { className, open, ...args } = props;
 
     const isOpenClass = open === true ? S.isOpen : undefined;
@@ -18,4 +18,4 @@ export const Collapable = forwardRef<HTMLDivElement, CollapableProps>((props, re
     );
 });
 
-Collapable.displayName = "Collapable";
+Collapsable.displayName = "Collapsable";
