@@ -32,7 +32,7 @@ export const EpisodeTable = (props: EpisodeTableProps) => {
                             };
 
                             return (
-                                <div className={S.episode} href={episode} target="_blank" key={episode.id}>
+                                <div className={S.episode} key={episode.id}>
                                     <div className={S.cell}>{episode.name}</div>
                                     <div className={S.cell}>{getEpisode(episode.episode)}</div>
                                     <div className={S.cell}>{getSeason(episode.episode)}</div>

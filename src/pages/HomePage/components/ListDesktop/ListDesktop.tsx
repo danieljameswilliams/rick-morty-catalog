@@ -2,7 +2,7 @@ import { Character } from "../../../../interfaces/character";
 import { Row } from "./components/Row/Row";
 
 import S from "./ListDesktop.module.scss";
-import { ListDesktopProps } from "./CharacterListDesktopProps";
+import { ListDesktopProps } from "./ListDesktopProps";
 
 export const ListDesktop = (props: ListDesktopProps) => {
     return (
